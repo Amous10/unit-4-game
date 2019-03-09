@@ -13,10 +13,10 @@ $(document).ready(() => {
         $(".crystals").empty();
 
         //created array of local images from folder
-        var images = ['assets/images.1/iconfinder_Amethyst_127306.png',
-            'assets/images.1/iconfinder_Aquamarine_127303.png',
-            'assets/images.1/iconfinder_Opal_127313.png',
-            'assets/images.1/iconfinder_Zircon_127304.png',
+        var images = ['assets/images/iconfinder_Amethyst_127306.png',
+            'assets/images/iconfinder_Aquamarine_127303.png',
+            'assets/images/iconfinder_Opal_127313.png',
+            'assets/images/iconfinder_Zircon_127304.png',
         ];
 
         //created number array from 19 to 120

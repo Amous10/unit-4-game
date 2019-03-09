@@ -71,7 +71,7 @@ $(document).ready(() => {
 
             $("#losses").html("Losses: " + losses);
 
-            // guessTotal = 0;
+            guessTotal = 0;
 
             resetAndStart();
 
@@ -84,7 +84,7 @@ $(document).ready(() => {
 
             console.log(wins);
             
-            // guessTotal = 0;
+            guessTotal = 0;
 
             resetAndStart();
         }

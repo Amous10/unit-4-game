@@ -5,128 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Crystal Collector</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
+    <title>Crystal Guess Game</title>
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <style type="text/css">
-        .crystal-image {
-            width: 150px;
-            height: 150px;
-        }
-
-        #number-to-guess {
-            font-size: 50px;
-            width: 250px;
-            height: 250px;
-            text-align: center;
-            margin-top: 10px;
-            word-wrap: break-word;
-
-        }
-
-        .center {
-            padding: 20px 0;
-            border: 3px solid green;
-            text-align: center;
-        }
-    </style>
 </head>
 
 <body>
+    <div class="title">JEWEL COLLECTOR</div>
 
-    <!-- Instructions in div container -->
+    <p id="target"></p>
 
-    <div class="container">
+    <div class="crystals"></div>
 
-        <div class="row">
+    <div id="instructions">Collect jewels without breaking the bank by exceeding the Target Number! Best of Luck!</div>
 
+    <p id="guessTotal"></p>
 
-            <!-- rows and columns -->
-            <div class="col-md-3">
+    <p id="wins">Wins: </p>
+    <p id="losses">Losses: </p>
 
-                <!-- make id class to target the number to be guessed -->
-                <div id="number-to-guess"></div>
-
-                <div id="number-to-guess" class="center" value=""></div>
-
-            </div>
-            <div class="col-md-6">
-                <h2>Crystal Collector</h2>
-
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore sed labore facilis repellat
-                    dignissimos fugiat, eum quae exercitationem, praesentium ipsam numquam? Laudantium, excepturi ea!
-                    Modi eum deserunt eveniet minus molestias. Lorem ipsum dolor, sit amet consectetur adipisicing
-                    elit. Omnis iure aliquam debitis recusandae, veritatis reiciendis? Minus, debitis velit, placeat in
-                    minima obcaecati nemo reprehenderit cum ea necessitatibus ut totam. Ullam! Lorem ipsum dolor sit,
-                    amet consectetur adipisicing elit. Esse, minima. Architecto, qui fugiat. Ullam, natus harum a ab
-                    magni dolorum dolores cumque unde ipsum modi, ducimus nesciunt vel soluta reprehenderit.</p>
-            </div>
-            <div class="col-md-3">
-            </div>
-        </div>
-        <div class="row">
-
-            <div class="col-md-3">
-
-                <div id="crystal-image"> <button class="crystal-image" class="btn btn-primary" value="[i]"><span id="mystery-number"></span></button></div>
-
-            </div>
-            <div class="col-md-3">
-
-                <div id="crystal-image"> <button class="crystal-image" class="btn btn-primary" value="[i]"><span id="mystery-number"></span></button></div>
-
-            </div>
-            <div class="col-md-3">
-
-                <div id="crystal-image"> <button class="crystal-image" class="btn btn-primary" value="[i]"><span id="mystery-number"></span></button></div>
-
-            </div>
-            <div class="col-md-3">
-
-                <div id="crystal-image"> <button class="crystal-image" class="btn btn-primary" value="[i]"><span id="mystery-number"></span></button></div>
-
-            </div>
-        </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 
-
-    </div>
-    </div>
-
-    </div>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script type="text/javascript">
-        var numbers = []
-        var counter = 0;
-        $(".crystal-image").on("click", function () {
-
-            counter += Math.floor((Math.random() * 12) + 1);
-
-            alert("New score: " + counter);
-
-
-            if (counter === targetNumber) {
-
-                alert("You win!");
-            } else if (counter < targetNumber) {
-
-                alert("Keep Guessing!");
-            } else
-                alert("You Lose!")
-        })
-
-
-        // set "mystery-number" to array random number
-        var targetNumber = Math.floor(Math.random() * 101) + 19;
-
-        //need to set min at 19
-
-        $("#number-to-guess").text("Get to this number: " + targetNumber);
-    </script>
 </body>
 
 </html>

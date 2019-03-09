@@ -1,0 +1,42 @@
+.title {
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    font-size: 30px;
+    color: purple;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+#instructions {
+    margin: 20px;
+    font-size: 25px;
+    text-align: center;
+
+}
+
+.crystals {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.crystal {
+border: 1px solid green;
+height: 200px;
+width: 200px;
+
+}
+
+image {
+    widows: 200px;
+    height: 200px;
+
+}

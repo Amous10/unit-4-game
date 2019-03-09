@@ -1,27 +1,87 @@
-//doc ready/reset
+$(document).ready(() => {
+
+
+    var random_result;
+    var losses = 0;
+    var wins = 0;
+    var guessTotal = 0;
+
+
+    var resetAndStart = function () {
+
+        $(".crystals").empty();
+
+        var images = ['assets/images/iconfinder_Amethyst_127306.png',
+            'assets/images/iconfinder_Aquamarine_127303.png',
+            'assets/images/iconfinder_Opal_127313.png',
+            'assets/images/iconfinder_Zircon_127304.png',
+        ];
+
+        random_result = Math.floor(Math.random() * 101) + 19;
+
+        $("#target").html('Target Number: ' + random_result);
+
+        for (var i = 0; i < 4; i++) {
+
+            var random = Math.floor(Math.random() * 11) + 1;
+            console.log(random);
 
 
 
-// create a random number array that generates a number"target-value" between 19 and 120
+            var crystal = $("<div>");
+            crystal.attr({
+                "class": 'crystal',
+                "data-random": random
+
+            });
+            crystal.css({
+                "background-image": "url('" + images[i] + "')",
+            })
+
+            $(".crystals").append(crystal);
+        }
+
+        $("#guessTotal").html("Total Score: " + guessTotal);
+
+    }
+
+    resetAndStart();
+
+    // event delegation 
+
+    $(document).on('click', ".crystal", function () {
 
 
+        var num = parseInt($(this).attr('data-random'));
 
-// create random array 1 thru 12 that randomly sets separate values to 4 different buttons/images
+        guessTotal += num;
 
-//create a loop stop when the number values are assigned. 
+        $("#guessTotal").html("Total Score: " + guessTotal);
 
-// create click event that same number per button, writes to document
 
-// create function that adds button number value to "guess-total"(counter)
+        if (guessTotal > random_result) {
 
-// write if statement that if "target-number" is equal to "guess-total", player wins: alert 
-// 'you win' and adds 1 to "win-count"
+            losses++;
 
-// if "guess-total" is greater than "target-number", player loses, alert "you lose", add 1 to "loss-count"
+            $("#losses").html("Losses: " + losses);
 
-// if neither conditions are met, function continues running,
+            guessTotal = 0;
 
-//when player wins or loses, game resets and loop runs again.
-//users score and score counter will be set to zero
+            resetAndStart();
 
-// place codes inside div containers ex;  value total, target value,  alerts, win/loss totals
+        } else if (guessTotal === random_result) {
+
+            wins++;
+
+            $("#wins").html("Wins: ", +wins);
+
+            guessTotal = 0;
+
+            resetAndStart();
+
+
+        }
+
+    });
+
+})

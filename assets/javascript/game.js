@@ -45,7 +45,7 @@ $(document).ready(() => {
             $(".crystals").append(crystal);
         }
         //writes running total to html
-        $("#guessTotal").html("Total Score: " + guessTotal);
+        $("#guessTotal").html("Bank: " + guessTotal);
         // $("#losses").html("Losses: " + losses);
         // $("#wins").html("Wins: " + wins);
     }
@@ -62,7 +62,7 @@ $(document).ready(() => {
         guessTotal += num;
 
         //write to html
-        $("#guessTotal").html("Total Score: " + guessTotal);
+        $("#guessTotal").html("Bank: " + guessTotal);
 
         //if guesses go over, adds a loss, writes to html, restarts game and counters
         if (guessTotal > random_result) {
